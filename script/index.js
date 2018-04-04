@@ -46,31 +46,14 @@ $(document).ready(function(){
         var sunrise = "";
         var sunset = "";
 
-        $.getJSON(weatherString, function(result){
-          description = result.weather[0].description;
-          icon = result.weather[0].icon;
-          celsius = result.main.temp;
-          fahrenheit = (celsius * 9/5) + 32;
-          wind = "wind: " + result.wind.speed + "mph";
-          humidity = "humidity: " + result.main.humidity + "%";
+        //get time of day
+        d = new Date();
+        h = d.getHours();
+        console.log(h);
 
-          console.log(description, celsius, wind, humidity, icon);
+        //get sunrise & sunset
+        $.getJSON("https://api.sunrise-sunset.org/json?lat=" + localeLat + "&lng=" + localeLon, function(response){
 
-          temp = fahrenheit + " &#8457";
-
-          $(".description").html(description);
-          $(".temp").html(temp);
-          $(".tempBtn").html("switch to &#8451");
-          $(".wind").html(wind);
-          $(".humidity").html(humidity);
-
-          //get time of day
-          d = new Date();
-          h = d.getHours();
-          console.log(h);
-
-          //get sunrise & sunset
-          $.getJSON("https://api.sunrise-sunset.org/json?lat=" + localeLat + "&lng=" + localeLon, function(response){
             sunrise = response.results.sunrise;
             sunset = response.results.sunset;
 
@@ -97,14 +80,37 @@ $(document).ready(function(){
             }
 
             console.log(sunrise, sunset);
-          });
+        });
 
+        $.getJSON(weatherString, function(result){
+          description = result.weather[0].description;
+          icon = result.weather[0].icon;
+          celsius = result.main.temp;
+          fahrenheit = (celsius * 9/5) + 32;
+          wind = "wind: " + result.wind.speed + "mph";
+          humidity = "humidity: " + result.main.humidity + "%";
+
+          console.log(description, celsius, wind, humidity, icon);
+
+          temp = fahrenheit + " &#8457";
+
+          $(".description").html(description);
+          $(".temp").html(temp);
+          $(".tempBtn").html("switch to &#8451");
+          $(".wind").html(wind);
+          $(".humidity").html(humidity);
 
           //change icon depending on description
           if(description == "scattered clouds" || description == "few clouds" ||
             description == "broken clouds"){
-
-
+              //daytime
+              if(h > sunrise && h < sunset){
+                $(".icon").attr("src", "styles/weatherIcons/partlyCloudyDay.svg");
+              }
+              //nighttime
+              else if(h > sunset || h < sunrise){
+                $(".icon").attr("src", "styles/weatherIcons/partlyCloudyNight.svg");
+              }
             }
 
 
