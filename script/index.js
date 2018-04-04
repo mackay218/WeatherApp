@@ -25,7 +25,7 @@ $(document).ready(function(){
         var cityString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + localeLat + "," + localeLon + "&key=AIzaSyB0Hk07Fs5gTfUHmUqDOUvhUIXOKQwAtPY"
 
         $.getJSON(cityString, function(response){
-          city = response.results[2].address_components[1].long_name + response.results[2].address_components[2].short_name;
+          city = response.results[2].address_components[1].long_name + ", " + response.results[2].address_components[2].short_name;
           console.log(city);
 
           $(".city").html(city);
@@ -41,6 +41,10 @@ $(document).ready(function(){
         var wind = "";
         var icon = "";
         var temp = ""
+        var d = "";
+        var h = "";
+        var sunrise = "";
+        var sunset = "";
 
         $.getJSON(weatherString, function(result){
           description = result.weather[0].description;
@@ -54,17 +58,61 @@ $(document).ready(function(){
 
           temp = fahrenheit + " &#8457";
 
-          $(".icon").attr("src", icon);
           $(".description").html(description);
           $(".temp").html(temp);
           $(".tempBtn").html("switch to &#8451");
           $(".wind").html(wind);
           $(".humidity").html(humidity);
 
+          //get time of day
+          d = new Date();
+          h = d.getHours();
+          console.log(h);
+
+          //get sunrise & sunset
+          $.getJSON("https://api.sunrise-sunset.org/json?lat=" + localeLat + "&lng=" + localeLon, function(response){
+            sunrise = response.results.sunrise;
+            sunset = response.results.sunset;
+
+            //split strings into array of chars
+            sunrise = sunrise.split("");
+            sunset = sunset.split("");
+
+            //get chars of hour, remove preceding zeros, convert to int
+            if(sunrise[11] == "0"){
+              sunrise = sunrise[12];
+              sunrise = number(sunrise);
+            }
+            else{
+              sunrise = sunrise[11] + sunrise[12];
+              sunrise = number(sunrise);
+            }
+            if(sunset[11] == "0"){
+              sunset = sunset[12];
+              sunset = number(sunset);
+            }
+            else{
+              sunset = sunset[11] + sunset[12];
+              sunset = number(sunset);
+            }
+
+            console.log(sunrise, sunset);
+          });
+
+
+          //change icon depending on description
+          if(description == "scattered clouds" || description == "few clouds" ||
+            description == "broken clouds"){
+
+
+            }
+
+
+
           var clickCount = 1;
 
+          //function for temp unit change
           $(".tempBtn").click(function(){
-
 
             if(clickCount == 1){
               temp = fahrenheit + " &#8457";
