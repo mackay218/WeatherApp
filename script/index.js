@@ -63,7 +63,7 @@ $(document).ready(function(){
               $(".tempBtn").html("switch to &#8457");
             }
             else{
-              temp = farhentheit + " &#8457";
+              temp = fahrenheit + " &#8457";
               $(".tempBtn").html("switch to &#8451");
             }
             $(".temp").html(temp);
