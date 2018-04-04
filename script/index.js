@@ -35,8 +35,8 @@ $(document).ready(function(){
           icon = result.weather[0].icon;
           celsius = result.main.temp;
           fahrenheit = (celsius * 9/5) + 32;
-          wind = "wind: " + result.wind.speed;
-          humidity = "humidty: " + result.main.humidity;
+          wind = "wind: " + result.wind.speed + "mph";
+          humidity = "humidty: " + result.main.humidity + "%";
 
           console.log(description, celsius, wind, humidity, icon);
 
