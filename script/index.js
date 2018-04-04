@@ -101,6 +101,8 @@ $(document).ready(function(){
           $(".humidity").html(humidity);
 
           //change icon depending on description
+
+          //partly cloudy
           if(description == "scattered clouds" || description == "few clouds" ||
             description == "broken clouds"){
               //daytime
@@ -112,7 +114,10 @@ $(document).ready(function(){
                 $(".icon").attr("src", "styles/weatherIcons/partlyCloudyNight.svg");
               }
             }
-
+          //overcast
+          if(description == "overcast clouds"){
+            $(".icon").attr("src", "styles/weatherIcons/cloudy.svg");
+          }
 
 
           var clickCount = 1;
