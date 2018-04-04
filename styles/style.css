@@ -24,7 +24,6 @@ h1{
   width: auto;
   border: 2px solid black;
   font-size: 30px;
-
 }
 
 .weatherContainer{
@@ -38,4 +37,10 @@ h1{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.other{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

@@ -35,9 +35,10 @@ $(document).ready(function(){
           icon = result.weather[0].icon;
           celsius = result.main.temp;
           fahrenheit = (celsius * 9/5) + 32;
-          wind = result.wind.speed;
+          wind = "wind: " + result.wind.speed;
+          humidity = "humidty: " + result.main.humidity;
 
-          console.log(description, celcius, wind, icon);
+          console.log(description, celcius, wind, humidity,icon);
 
           temp = fahrenheit + " &#8457";
 
@@ -45,10 +46,14 @@ $(document).ready(function(){
           $(".description").html(description);
           $(".temp").attr("style", temp);
           $(".tempBtn").html("switch to &#8451");
+          $(".wind").html(wind);
+          $(".humidty").html(humidity);
 
           var clickCount = 1;
 
           $(".tempBtn").click(function(){
+            clickCount += 1;
+
             if(clickCount == 1){
               temp = fahrenheit + " &#8457";
               $(".tempBtn").html("switch to &#8451");
@@ -62,6 +67,8 @@ $(document).ready(function(){
               $(".tempBtn").html("switch to &#8451");
             }
             $(".temp").attr("style", temp);
+
+
           });
 
         });
