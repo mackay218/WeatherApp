@@ -23,6 +23,18 @@ $(document).ready(function(){
         var urlString = "https://fcc-weather-api.glitch.me/api/current?lat=" +
                         localeLat + "&lon="+ localeLon;
 
+        var city = "";
+
+        //get city name
+        $.getJSON("https://geoip-db.com/json", function(response){
+          city = response.city;
+          console.log(city);
+
+          $(".city").html(city);
+
+        });
+
+
         var description = "";
         var celsius = "";
         var fahrenheit = "";
