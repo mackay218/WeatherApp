@@ -20,10 +20,10 @@ h1{
 }
 
 .container{
-  height: 200px;
-  width: 200px;
+  height: auto;
+  width: auto;
   border: 2px solid black;
-
+  font-size: 30px;
 }
 
 .weatherContainer{
@@ -35,4 +35,12 @@ h1{
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.other{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
