@@ -81,19 +81,19 @@ $(document).ready(function(){
             //get chars of hour, remove preceding zeros, convert to int
             if(sunrise[11] == "0"){
               sunrise = sunrise[12];
-              sunrise = number(sunrise);
+              sunrise = Number(sunrise);
             }
             else{
               sunrise = sunrise[11] + sunrise[12];
-              sunrise = number(sunrise);
+              sunrise = Number(sunrise);
             }
             if(sunset[11] == "0"){
               sunset = sunset[12];
-              sunset = number(sunset);
+              sunset = Number(sunset);
             }
             else{
               sunset = sunset[11] + sunset[12];
-              sunset = number(sunset);
+              sunset = Number(sunset);
             }
 
             console.log(sunrise, sunset);
