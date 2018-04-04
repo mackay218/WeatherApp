@@ -37,6 +37,8 @@ $(document).ready(function(){
           fahrenheit = (celsius * 9/5) + 32;
           wind = result.wind.speed;
 
+          console.log(description, celcius, wind, icon);
+
           temp = fahrenheit + " &#8457";
 
           $(".icon").attr("src", icon);
@@ -62,11 +64,6 @@ $(document).ready(function(){
             $(".temp").attr("style", temp);
           });
 
-
-
-
-
-          console.log(description, celcius, wind);
         });
 
       }
