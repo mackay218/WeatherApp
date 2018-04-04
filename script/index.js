@@ -22,7 +22,7 @@ $(document).ready(function(){
 
         var city = "";
 
-        var cityString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + localeLat + "," + localLon + "&key=AIzaSyB0Hk07Fs5gTfUHmUqDOUvhUIXOKQwAtPY"
+        var cityString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + localeLat + "," + localeLon + "&key=AIzaSyB0Hk07Fs5gTfUHmUqDOUvhUIXOKQwAtPY"
 
         $.getJSON(cityString, function(response){
           console.log(response);
