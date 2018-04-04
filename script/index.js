@@ -20,20 +20,17 @@ $(document).ready(function(){
         var localeLat = locale[0];
         var localeLon = locale[1];
 
-        var urlString = "https://fcc-weather-api.glitch.me/api/current?lat=" +
-                        localeLat + "&lon="+ localeLon;
-
         var city = "";
 
-        //get city name
-        $.getJSON("https://geoip-db.com/json", function(response){
-          city = response.city;
-          console.log(city);
+        var cityString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + localeLat + "," + localLon + "&key=AIzaSyB0Hk07Fs5gTfUHmUqDOUvhUIXOKQwAtPY"
 
-          $(".city").html(city);
-
+        $.getJSON(cityString, function(response){
+          console.log(response);
         });
 
+
+        var weatherString = "https://fcc-weather-api.glitch.me/api/current?lat=" +
+                        localeLat + "&lon="+ localeLon;
 
         var description = "";
         var celsius = "";
@@ -42,7 +39,7 @@ $(document).ready(function(){
         var icon = "";
         var temp = ""
 
-        $.getJSON(urlString, function(result){
+        $.getJSON(weatherString, function(result){
           description = result.weather[0].description;
           icon = result.weather[0].icon;
           celsius = result.main.temp;
