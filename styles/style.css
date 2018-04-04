@@ -9,6 +9,7 @@ body{
   display: grid;
   grid: auto auto / auto;
   justify-content: center;
+  background: blue;
 }
 
 h1{
@@ -42,5 +43,10 @@ h1{
 .other{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.icon{
+  height: 5vw;
+  width: 5vw;
 }
