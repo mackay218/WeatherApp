@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-
-  $("#geoButton").click(function(){
     var locale = [];
 
 
@@ -50,6 +48,6 @@ $(document).ready(function(){
     else{
       document.write('Your browser does not support GeoLocation');
     }
-  });
+  
 
 });
