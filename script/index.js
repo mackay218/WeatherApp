@@ -52,10 +52,12 @@ $(document).ready(function(){
         console.log(h);
 
         //get sunrise & sunset
-        $.getJSON("https://api.sunrise-sunset.org/json?lat=" + localeLat + "&lng=" + localeLon, function(response){
+        $.getJSON("https://api.sunrise-sunset.org/json?lat=" + localeLat + "&lng=" + localeLon + "&formatted=0", function(response){
 
             var sunriseString = response.results.sunrise;
             var sunsetString = response.results.sunset;
+
+
 
             //split strings into array of chars
             var sunriseArray = [];
@@ -106,6 +108,15 @@ $(document).ready(function(){
 
           //change icon depending on description
 
+          //clear
+          if(description == "clear sky"){
+            if(h > sunrise && h < sunset){
+              $(".icon").attr("src", "styles/weatherIcons/clearSun.svg");
+            }
+            if(h > sunset || h < sunrise){
+              $(".icon").attr("src", "styles/weatherIcons/clearMoon.svg");
+            }
+          }
           //partly cloudy
           if(description == "scattered clouds" || description == "few clouds" ||
             description == "broken clouds"){
@@ -122,7 +133,36 @@ $(document).ready(function(){
           if(description == "overcast clouds"){
             $(".icon").attr("src", "styles/weatherIcons/cloudy.svg");
           }
+          //drizzle
+          if(description == "light intensity drizzle" || description == "drizzle" ||
+              description == "heavy intensity drizzle" ||
+              description == "light intensity drizzle rain" ||
+              description == "drizzle rain" ||
+              description == "heavy intensity drizzle rain" ||
+              description == "shower rain drizzle" ||
+              description == "heavy shower rain and drizzle" ||
+              description == "shower drizzle"){
 
+                $(".icon").attr("src", "styles/weatherIcons/drizzle.svg");
+              }
+          //light rain
+          if(description == "light rain" || description == "moderate rain" ||
+             description == "light intensity shower rain"){
+            $(".icon").attr("src", "styles/weatherIcons/lightRain.svg");
+          }
+          //heavy rain
+          if(description == "heavy intensity rain" ||
+             description == "very heavy rain" ||
+             description == "extreme rain" ||
+             description == "freezing rain" ||
+             description == "shower rain" ||
+             description == "heavy intensity shower rain" ||
+             description == "ragged shower rain"){
+
+               $(".icon").attr("src", "styles/weatherIcons/heavyRain.svg");
+             }
+          //storms
+          if description == ""
 
           var clickCount = 1;
 
