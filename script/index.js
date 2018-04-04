@@ -54,28 +54,32 @@ $(document).ready(function(){
         //get sunrise & sunset
         $.getJSON("https://api.sunrise-sunset.org/json?lat=" + localeLat + "&lng=" + localeLon, function(response){
 
-            sunrise = response.results.sunrise;
-            sunset = response.results.sunset;
+            var sunriseString = response.results.sunrise;
+            var sunsetString = response.results.sunset;
 
             //split strings into array of chars
-            sunrise = sunrise.split("");
-            sunset = sunset.split("");
+            var sunriseArray = [];
+            sunriseArray = sunriseString.split("");
+            var sunsetArray = [];
+            sunsetArray = sunsetString.split("");
+
+            console.log(sunriseArray, sunsetArray);
 
             //get chars of hour, remove preceding zeros, convert to int
-            if(sunrise[11] == "0"){
-              sunrise = sunrise[12];
+            if(sunriseArray[11] == "0"){
+              sunrise = sunriseArray[12];
               sunrise = Number(sunrise);
             }
             else{
-              sunrise = sunrise[11] + sunrise[12];
+              sunrise = sunriseArray[11] + sunriseArray[12];
               sunrise = Number(sunrise);
             }
             if(sunset[11] == "0"){
-              sunset = sunset[12];
+              sunset = sunsetArray[12];
               sunset = Number(sunset);
             }
             else{
-              sunset = sunset[11] + sunset[12];
+              sunset = sunsetArray[11] + sunsetArray[12];
               sunset = Number(sunset);
             }
 
