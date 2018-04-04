@@ -44,7 +44,7 @@ $(document).ready(function(){
 
           $(".icon").attr("src", icon);
           $(".description").html(description);
-          $(".temp").attr("style", temp);
+          $(".temp").html(temp);
           $(".tempBtn").html("switch to &#8451");
           $(".wind").html(wind);
           $(".humidty").html(humidity);
@@ -66,7 +66,7 @@ $(document).ready(function(){
               temp = farhentheit + " &#8457";
               $(".tempBtn").html("switch to &#8451");
             }
-            $(".temp").attr("style", temp);
+            $(".temp").html(temp);
 
 
           });
