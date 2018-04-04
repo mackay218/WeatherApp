@@ -38,7 +38,7 @@ $(document).ready(function(){
           wind = "wind: " + result.wind.speed;
           humidity = "humidty: " + result.main.humidity;
 
-          console.log(description, celcius, wind, humidity,icon);
+          console.log(description, celsius, wind, humidity,icon);
 
           temp = fahrenheit + " &#8457";
 
