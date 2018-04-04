@@ -25,7 +25,10 @@ $(document).ready(function(){
         var cityString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + localeLat + "," + localeLon + "&key=AIzaSyB0Hk07Fs5gTfUHmUqDOUvhUIXOKQwAtPY"
 
         $.getJSON(cityString, function(response){
-          console.log(response);
+          city = response[2].address_components[1].long_name + response[2].address_components[2].short_name;
+          console.log(city);
+
+          $(".city").html(city);
         });
 
 
