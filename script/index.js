@@ -45,7 +45,7 @@ $(document).ready(function(){
           celsius = result.main.temp;
           fahrenheit = (celsius * 9/5) + 32;
           wind = "wind: " + result.wind.speed + "mph";
-          humidity = "humidty: " + result.main.humidity + "%";
+          humidity = "humidity: " + result.main.humidity + "%";
 
           console.log(description, celsius, wind, humidity, icon);
 
@@ -56,7 +56,7 @@ $(document).ready(function(){
           $(".temp").html(temp);
           $(".tempBtn").html("switch to &#8451");
           $(".wind").html(wind);
-          $(".humidty").html(humidity);
+          $(".humidity").html(humidity);
 
           var clickCount = 1;
 
