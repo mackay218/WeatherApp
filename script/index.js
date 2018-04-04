@@ -162,7 +162,7 @@ $(document).ready(function(){
                $(".icon").attr("src", "styles/weatherIcons/heavyRain.svg");
              }
           //storms
-          if description == ""
+          
 
           var clickCount = 1;
 
