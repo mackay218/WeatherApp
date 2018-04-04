@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid: auto auto / auto;
+  justify-content: center;
+}
+
+h1{
+  grid-row: 1/2;
+  grid-column: 1/2;
+  width: 100vw;
+  text-align: center;
+
+}
+
+.container{
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
+
+}
+
+.weatherContainer{
+  grid-row: 2/3;
+  grid-column: 1/2;
+  height: 80vh;
+  width: 90vw;
+  margin-left: 5vw;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
