@@ -85,6 +85,16 @@ $(document).ready(function(){
               sunset = Number(sunset);
             }
 
+            //correction because API response is off by 5 hours
+            sunrise = sunrise - 5;
+
+            if(sunset == 0){
+              sunset = 7;
+            }
+            else{
+              sunset = sunset - 5;
+            }
+
             console.log(sunrise, sunset);
         });
 
@@ -109,7 +119,7 @@ $(document).ready(function(){
           //change icon depending on description
 
           //clear
-          if(description == "clear sky"){
+          if(description == "clear sky" || description == "calm"){
             if(h > sunrise && h < sunset){
               $(".icon").attr("src", "styles/weatherIcons/clearSun.svg");
             }
@@ -162,8 +172,66 @@ $(document).ready(function(){
                $(".icon").attr("src", "styles/weatherIcons/heavyRain.svg");
              }
           //storms
-          
+          if(description == "thunderstorm with light rain" ||
+             description == "thunderstorm with rain" ||
+             description == "thunderstorm with heavy rain" ||
+             description == "light thunderstorm" ||
+             description == "thunderstorm" ||
+             description == "heavy thunderstorm" ||
+             description == "ragged thunderstorm" ||
+             description == "thunderstorm with light drizzle" ||
+             description == "thunderstorm with drizzle" ||
+             description == "thunderstorm with heavy drizzle" ||
+             description == "storm" ||
+             description == "violent storm"){
 
+               $(".icon").attr("src", "styles/weatherIcons/thunderStorm.svg");
+             }
+          //snow
+          if(description == "light snow" || description == "snow" ||
+             description == "heavy snow" || description == "sleet" ||
+             description == "shower sleet" ||
+             description == "light rain and snow" ||
+             description == "rain and snow" ||
+             description == "light shower snow" ||
+             description == "shower snow" ||
+             description == "	heavy shower snow"){
+
+               $(".icon").attr("src", "styles/weatherIcons/snow.svg");
+             }
+          //fog/mist/sand etc.
+          if(description == "mist" || description == "smoke" ||
+             description == "haze" || description == "sand, dust whirls" ||
+             description == "fog" || description == "sand" ||
+             description == "dust" || description == "volcanic ash"){
+
+               $(".icon").attr("src", "styles/weatherIcons/haze.svg");
+             }
+          //wind
+          if(description == "light breeze" || description == "gentle breeze" ||
+             description == "moderate breeze" ||
+             description == "fresh breeze" || description == "strong breeze" ||
+             description == "high wind, near gale" ||
+             description == "gale" || description == "severe gale" ||
+             description == "squalls"){
+
+              $(".icon").attr("src", "styles/weatherIcons/windy.svg");
+             }
+          //extremes
+          if(description == "tornado" || description == "hurricane" ||
+             description == "tropical storm"){
+               
+            $(".icon").attr("src", "styles/weatherIcons/tornado.svg");
+          }
+          if(description == "cold"){
+            $(".icon").attr("src", "styles/weatherIcons/cold.svg");
+          }
+          if(description == "hot"){
+            $(".icon").attr("src", "styles/weatherIcons/hot.svg");
+          }
+          if(description == "hail"){
+            $(".icon").attr("src", "styles/weatherIcons/hail.svg");
+          }
           var clickCount = 1;
 
           //function for temp unit change
