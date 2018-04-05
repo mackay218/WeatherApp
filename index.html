@@ -1,36 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title> Weather App</title>
   <!--  Meta  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--favicon-->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="favicon/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="favicon/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
   <!--stylesheet-->
   <link rel="stylesheet" href="styles/style.css">
   <!--font-->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,400,500,600,700" rel="stylesheet">
-  <title> Weather App</title>
+  <!--DMlogo-->
+  <link rel="stylesheet" href="styles/icomoon/icon.css">
 </head>
 <body>
   <h1>Local Weather</h1>
   <div class = "weatherContainer">
-    <div class = "city container"></div>
+    <div class = "city container">Location</div>
     <div class = "container">
       <img class = "icon" src="" >
+      <a href="https://www.flaticon.com/authors/rns"
+          title="RNS">
+      </a>
+      <!--<div>Icons made by <a href="https://www.flaticon.com/authors/rns"
+          title="RNS">RNS</a> from <a href="https://www.flaticon.com/"
+          title="Flaticon">www.flaticon.com</a> is licensed by
+          <a href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
     </div>
-    <div class = "description container"></div>
-    <div class = "temp container"></div>
-    <button class ="tempBtn container"></button>
+    <div class = "description container">description</div>
+    <div class = "temp container">00</div>
+    <button class ="tempBtn container">switch to</button>
     <div class = "other conditions">
-      <div class = "wind container"></div>
-      <div class = "humidity container"></div>
+      <div class = "wind container">wind: 00mph</div>
+      <div class = "humidity container">humidity: 00%</div>
     </div>
-    <!--<div>Icons made by <a href="https://www.flaticon.com/authors/rns"
-        title="RNS">RNS</a> from <a href="https://www.flaticon.com/"
-        title="Flaticon">www.flaticon.com</a> is licensed by
-        <a href="http://creativecommons.org/licenses/by/3.0/"
-        title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
   </div>
-
+  <div class = "signature">
+  <a class = "portfolioLink" target = "_blank" href = "https://mackay2588.github.io">
+    <p >by Daniel MacKay</p>
+    <div class = "icon-dmLogo5px heroLogo portfolioLink"></div>
+  </a>
+</div>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="script/index.js"></script>

@@ -101,8 +101,8 @@ $(document).ready(function(){
         $.getJSON(weatherString, function(result){
           description = result.weather[0].description;
           icon = result.weather[0].icon;
-          celsius = result.main.temp;
-          fahrenheit = (celsius * 9/5) + 32;
+          celsius = Math.round(result.main.temp);
+          fahrenheit = Math.round((celsius * 9/5) + 32);
           wind = "wind: " + result.wind.speed + "mph";
           humidity = "humidity: " + result.main.humidity + "%";
 
@@ -115,6 +115,7 @@ $(document).ready(function(){
           $(".tempBtn").html("switch to &#8451");
           $(".wind").html(wind);
           $(".humidity").html(humidity);
+          $(".icon").attr("style", "opacity: 1");
 
           //change icon depending on description
 
@@ -256,6 +257,18 @@ $(document).ready(function(){
           });
 
         });
+
+        fahrenheit = 60;
+
+        //change background based on temp
+        if(fahrenheit <= 50){
+          $("body").attr("style", "background: linear-gradient(to bottom, #1A5ECB 90%, #fff);");
+          $(".portfolioLink").attr("style", "background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);");
+        }
+        else if(fahrenheit > 50){
+          $("body").attr("style", "background: linear-gradient(to bottom, #FF6E0B, #FFE168);");
+          $(".portfolioLink").attr("style", "background: linear-gradient(to bottom right, #FFE168, #FF6E0B, #FFE168, #C44F00, #FFE168);");
+        }
 
       }
     }

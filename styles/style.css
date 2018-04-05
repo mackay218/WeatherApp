@@ -3,13 +3,14 @@
 }
 
 body{
+  height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
   display: grid;
-  grid: auto auto / auto;
+  grid: auto 70vh 15vh/ auto;
   justify-content: center;
-  background: blue;
+  background: linear-gradient(to bottom, #1A5ECB 90%, #fff);
 }
 
 h1{
@@ -28,16 +29,24 @@ h1{
 }
 
 .weatherContainer{
+  position: absolute;
+  bottom: 15vh;
   grid-row: 2/3;
   grid-column: 1/2;
-  height: 80vh;
+  height: 70vh;
   width: 90vw;
   margin-left: 5vw;
   border: 2px solid #fff;
+  border-radius: 50px;
+  background-color: rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 0 40px 10px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 40px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 40px 10px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .city{
@@ -47,8 +56,9 @@ h1{
 }
 
 .icon{
-  height: 10vw;
-  width: 10vw;
+  height: 100px;
+  width: 100px;
+  opacity: 0;
 }
 
 .description{
@@ -68,17 +78,89 @@ h1{
   font-size: 20px;
   font-weight: 300;
   background: transparent;
+  border: none;
+  outline: none;
+}
+
+.tempBtn:hover{
+  position: relative;
+  bottom: 2px;
+  text-shadow: 0 4px rgba(0,0,0,0.5);
 }
 
 .other{
+  width: 100%;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 25px;
   font-weight: 200;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .humidity{
   margin-left: 5px;
+}
+
+.signature{
+  grid-row: 3/4;
+  grid-column: 1/2;
+  height: auto;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.portfolioLink{
+  background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 2px rgba(255,255,255,0.2);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.portfolioLink p{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+}
+
+.heroLogo{
+  font-size: 60px;
+}
+
+.portfolioLink:hover{
+  text-shadow: 0 0 #fff;
+}
+.portfolioLink p:hover~.heroLogo{
+  text-shadow: 0 0 #fff;
+}
+
+.portfolioLink{
+  -webkit-animation: backgroundShift 20s ease infinite alternate;
+  -moz-animation: backgroundShift 20s ease infinite alternate;
+  animation: backgroundShift 20s ease infinite alternate;
+}
+
+
+@-webkit-keyframes backgroundShift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes  backgroundShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes backgroundShift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
