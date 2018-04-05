@@ -15,11 +15,9 @@ body{
 
 }
 
-
-
 h1{
   background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
-  background-size: 300%;
+  background-size: 400%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -29,7 +27,6 @@ h1{
   width: 100vw;
   text-align: center;
   font-family: "IBM Plex Sans", sans-serif;
-  /*color: #fff;*/
 
   -webkit-animation: backgroundShift 20s ease infinite alternate;
   -moz-animation: backgroundShift 20s ease infinite alternate;
@@ -88,6 +85,8 @@ h1{
   .temperature{
     grid-row: 2/3;
     grid-column: 1/2;
+    position: relative;
+    bottom: 20px;
     transition: 0.5s;
   }
 
@@ -97,10 +96,16 @@ h1{
     transition: 0.5s;
   }
 
+  .description{
+    position: relative;
+    bottom: 30px;
+  }
 
   .other{
     grid-row: 2/3;
     grid-column: 3/4;
+    position: relative;
+    bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +126,7 @@ h1{
 }
 
 .weather{
-  height: auto;
+  height: 150px;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -131,16 +136,30 @@ h1{
 .icon{
   height: 100px;
   width: 100px;
+  padding-left: 10px;
   opacity: 0;
 }
 
+@media only screen and (orientation: portrait){
+  .icon{
+    position: relative;
+    top: 20px;
+  }
+  .credit{
+    position: relative;
+    bottom: 70px;
+
+  }
+}
+
 .credit{
-  height: auto;
-  width: auto;
+
+  height: 100px;
+  width: 100px;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 100;
-  font-size: 15px;
-  color: rgba(255,255,255,0.2);
+  font-size: 10px;
+  color: transparent;
   text-decoration: none;
 }
 

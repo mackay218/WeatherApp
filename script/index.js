@@ -277,6 +277,7 @@ $(document).ready(function(){
           $("body").attr("style", "background: linear-gradient(to bottom, #1A5ECB 90%, #fff);");
           $(".sig").attr("style", signatureStyle);
           $(".heroLogo").attr("style", signatureStyle);
+          $("h1").attr("style", signatureStyle);
 
           $(".sig:hover").attr("style", "text-shadow: 0 0 1px #fff;");
           $(".sig:hover~.heroLogo").attr("style, text-shadow: 0 0 1px #fff;");
@@ -298,6 +299,7 @@ $(document).ready(function(){
           $("body").attr("style", "background: linear-gradient(to bottom, #FF6E0B, #FFE168);");
           $(".sig").attr("style", signatureStyle);
           $(".heroLogo").attr("style", signatureStyle);
+          $("h1").attr("style", signatureStyle);
 
           $(".sig:hover").attr("style", "text-shadow: 0 0 1px #000;");
           $(".sig:hover~.heroLogo").attr("style, text-shadow: 0 0 1px #000;");
