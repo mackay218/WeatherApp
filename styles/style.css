@@ -8,7 +8,7 @@ body{
   padding: 0;
   overflow: hidden;
   display: grid;
-  grid: 15vh 70vh 25px/ auto;
+  grid: 15vh 70vh 15vh/ auto;
   justify-content: center;
   background: linear-gradient(to bottom, #1A5ECB 90%, #fff);
 }
@@ -195,21 +195,30 @@ h1{
     margin: 0;
     position: absolute;
     bottom: 0;
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
-.signature{
-  grid-row: 3/4;
-  grid-column: 1/2;
-  position: absolute;
-  bottom: 2px;
-  height: auto;
-  width: 100%;
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+@media only screen and (orientation: landscape){
+  .signature{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    position: absolute;
+    bottom: 2px;
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
+
 
 .portfolioLink{
   background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
