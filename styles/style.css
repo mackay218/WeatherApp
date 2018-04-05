@@ -29,8 +29,6 @@ h1{
 }
 
 .weatherContainer{
-  position: absolute;
-  bottom: 15vh;
   grid-row: 2/3;
   grid-column: 1/2;
   height: 70vh;
@@ -114,6 +112,24 @@ h1{
 }
 
 .portfolioLink{
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.portfolioLink p{
+    background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0px 1px 2px rgba(255,255,255,0.2);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+}
+
+.heroLogo{
   background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
   background-size: 300%;
   -webkit-background-clip: text;
@@ -121,17 +137,6 @@ h1{
   background-clip: text;
   color: transparent;
   text-shadow: 0px 1px 2px rgba(255,255,255,0.2);
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-}
-
-.portfolioLink p{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 20px;
-}
-
-.heroLogo{
   font-size: 60px;
 }
 
