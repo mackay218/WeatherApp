@@ -89,7 +89,7 @@ $(document).ready(function(){
             sunrise = sunrise - 5;
 
             if(sunset == 0){
-              sunset = 7;
+              sunset = 19;
             }
             else{
               sunset = sunset - 5;
@@ -120,10 +120,10 @@ $(document).ready(function(){
 
           //clear
           if(description == "clear sky" || description == "calm"){
-            if(h > sunrise && h < sunset){
+            if(h >= sunrise && h < sunset){
               $(".icon").attr("src", "styles/weatherIcons/clearSun.svg");
             }
-            if(h > sunset || h < sunrise){
+            if(h >= sunset || h < sunrise){
               $(".icon").attr("src", "styles/weatherIcons/clearMoon.svg");
             }
           }
@@ -220,7 +220,7 @@ $(document).ready(function(){
           //extremes
           if(description == "tornado" || description == "hurricane" ||
              description == "tropical storm"){
-               
+
             $(".icon").attr("src", "styles/weatherIcons/tornado.svg");
           }
           if(description == "cold"){
