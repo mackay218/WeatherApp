@@ -260,14 +260,32 @@ $(document).ready(function(){
 
         fahrenheit = 60;
 
+        var signatureStyle = "";
+
         //change background based on temp
         if(fahrenheit <= 50){
+
+          signatureStyle = "-webkit-background-clip: text; \
+            -moz-background-clip: text; \
+            background-clip: text; \
+            color: transparent; \
+            text-shadow: 0px 1px 2px rgba(255,255,255,0.2); \
+            background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);"
+
           $("body").attr("style", "background: linear-gradient(to bottom, #1A5ECB 90%, #fff);");
-          $(".portfolioLink").attr("style", "background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);");
+          $(".portfolioLink").attr("style", signatureStyle);
         }
         else if(fahrenheit > 50){
+
+          signatureStyle = "-webkit-background-clip: text; \
+            -moz-background-clip: text; \
+            background-clip: text; \
+            color: transparent; \
+            text-shadow: 0px 1px 2px rgba(255,255,255,0.2); \
+            background: linear-gradient(to bottom right, #FFE168, #FF6E0B, #FFE168, #C44F00, #FFE168);"
+
           $("body").attr("style", "background: linear-gradient(to bottom, #FF6E0B, #FFE168);");
-          $(".portfolioLink").attr("style", "background: linear-gradient(to bottom right, #FFE168, #FF6E0B, #FFE168, #C44F00, #FFE168);");
+          $(".portfolioLink").attr("style", signatureStyle);
         }
 
       }

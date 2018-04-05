@@ -127,17 +127,11 @@ h1{
 }
 
 .portfolioLink p{
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 20px;
 }
 
 .heroLogo{
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
   font-size: 60px;
 }
 
