@@ -45,6 +45,8 @@ h1{
 
 .weatherContainer{
   order: 2;
+  position: relative;
+  bottom: 25px;
   height: 60vh;
   width: 90vw;
   margin-left: 5vw;
@@ -114,10 +116,6 @@ h1{
     transition: 0.5s;
   }
 }
-
-
-
-
 
 .city{
   font-family: "IBM Plex Sans", sans-serif;
@@ -236,6 +234,8 @@ h1{
 
   .signature{
     order: 3;
+    position: relative;
+    bottom: 25px;
     padding: 0;
     margin-top: 2px;
     height: auto;
@@ -249,6 +249,8 @@ h1{
 @media only screen and (orientation: landscape){
   .signature{
     order: 3;
+    position: relative;
+    bottom: 20px;
     height: auto;
     width: 100%;
     display: flex;
