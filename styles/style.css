@@ -8,7 +8,7 @@ body{
   padding: 0;
   overflow: hidden;
   display: grid;
-  grid: auto 70vh 15vh/ auto;
+  grid: 15vh 70vh 15vh/ auto;
   justify-content: center;
   background: linear-gradient(to bottom, #1A5ECB 90%, #fff);
 }
@@ -127,11 +127,17 @@ h1{
 }
 
 .portfolioLink p{
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 20px;
 }
 
 .heroLogo{
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
   font-size: 60px;
 }
 
