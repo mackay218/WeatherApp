@@ -267,32 +267,42 @@ $(document).ready(function(){
 
           signatureStyle =
             "background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff); \
-             background-size: 300%; \
+             background-size: 400%; \
              -webkit-background-clip: text; \
              -moz-background-clip: text; \
              background-clip: text; \
-            text-shadow: 0 0 1px rgba(255,255,255,0.2); \
              color: transparent; \
              text-decoration: none;"
 
           $("body").attr("style", "background: linear-gradient(to bottom, #1A5ECB 90%, #fff);");
-          $(".portfolioLink").attr("style", signatureStyle);
+          $(".sig").attr("style", signatureStyle);
+          $(".heroLogo").attr("style", signatureStyle);
+
+          $(".sig:hover").attr("style", "text-shadow: 0 0 1px #fff;");
+          $(".sig:hover~.heroLogo").attr("style, text-shadow: 0 0 1px #fff;");
+          $(".heroLogo:hover").attr("style", "text-shadow: 0 0 1px #fff;");
+          $(".heroLogo:hover~.sig").attr("style", "text-shadow: 0 0 1px #fff");
         }
         else if(fahrenheit > 50){
 
           signatureStyle =
             "background: linear-gradient(to bottom right, #FFE168, #FF6E0B, #FFE168, #C44F00, #FFE168); \
-            background-size: 300%; \
+            background-size: 400%; \
             -webkit-background-clip: text; \
             -moz-background-clip: text; \
             background-clip: text; \
-            text-shadow: 0 0 1px rgba(0,0,0,0.2); \
             color: transparent; \
             text-decoration: none;"
 
 
           $("body").attr("style", "background: linear-gradient(to bottom, #FF6E0B, #FFE168);");
-          $(".portfolioLink").attr("style", signatureStyle);
+          $(".sig").attr("style", signatureStyle);
+          $(".heroLogo").attr("style", signatureStyle);
+
+          $(".sig:hover").attr("style", "text-shadow: 0 0 1px #000;");
+          $(".sig:hover~.heroLogo").attr("style, text-shadow: 0 0 1px #000;");
+          $(".heroLogo:hover").attr("style", "text-shadow: 0 0 1px #000;");
+          $(".heroLogo:hover~.sig").attr("style", "text-shadow: 0 0 1px #000");
         }
 
       }

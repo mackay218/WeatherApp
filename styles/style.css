@@ -18,11 +18,22 @@ body{
 
 
 h1{
+  background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 1px rgba(255,255,255,0.2);
   order: 1;
   width: 100vw;
   text-align: center;
   font-family: "IBM Plex Sans", sans-serif;
-  color: #fff;
+  /*color: #fff;*/
+
+  -webkit-animation: backgroundShift 20s ease infinite alternate;
+  -moz-animation: backgroundShift 20s ease infinite alternate;
+  animation: backgroundShift 20s ease infinite alternate;
 }
 
 .container{
@@ -123,6 +134,20 @@ h1{
   opacity: 0;
 }
 
+.credit{
+  height: auto;
+  width: auto;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  color: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.credit:hover{
+  color: #fff;
+}
+
 .description{
   width: 100%;
   text-align: center;
@@ -214,41 +239,58 @@ h1{
 
 
 .portfolioLink{
+  height: auto;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sig{
   background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
-  background-size: 300%;
+  background-size: 400%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 1px rgba(255,255,255,0.2);
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 20px;
+  padding-top: 15px;
+
+  -webkit-animation: backgroundShift 30s ease infinite alternate;
+  -moz-animation: backgroundShift 30s ease infinite alternate;
+  animation: backgroundShift 30s ease infinite alternate;
 }
 
-.portfolioLink p{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 20px;
+.sig:hover{
+  text-shadow: 0 0 1px #fff;
+}
+
+.sig:hover~.heroLogo{
+  text-shadow: 0 0 1px #fff;
 }
 
 .heroLogo{
+  background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-size: 60px;
+
+  -webkit-animation: backgroundShift 30s ease infinite alternate;
+  -moz-animation: backgroundShift 30s ease infinite alternate;
+  animation: backgroundShift 30s ease infinite alternate;
 }
 
-.portfolioLink:hover{
-  text-shadow: 0 0 #fff;
-}
-.portfolioLink p:hover~.heroLogo{
-  text-shadow: 0 0 #fff;
+.heroLogo:hover{
+  text-shadow: 0 0 1px #fff;
 }
 
-.portfolioLink{
-  -webkit-animation: backgroundShift 20s ease infinite alternate;
-  -moz-animation: backgroundShift 20s ease infinite alternate;
-  animation: backgroundShift 20s ease infinite alternate;
+.heroLogo:hover~.sig{
+  text-shadow: 0 0 1px #fff;
 }
-
-
 
 @-webkit-keyframes backgroundShift {
     0%{background-position:0% 50%}
