@@ -178,7 +178,11 @@ h1{
 
 @media only screen and (orientation: portrait){
   .other{
+    width: 100%;
     font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     transition: 0.5s;
   }
 
