@@ -11,6 +11,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  transition: 0.2s;
 
 }
 
@@ -194,7 +195,6 @@ h1{
     margin-top: 2px;
     height: auto;
     width: 100%;
-    margin-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -206,7 +206,6 @@ h1{
     order: 3;
     height: auto;
     width: 100%;
-    margin-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
