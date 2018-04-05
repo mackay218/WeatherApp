@@ -258,7 +258,7 @@ $(document).ready(function(){
 
         });
 
-      
+
 
         var signatureStyle = "";
 
@@ -272,7 +272,6 @@ $(document).ready(function(){
              -moz-background-clip: text; \
              background-clip: text; \
              color: transparent; \
-             text-shadow: 0px 1px 2px rgba(255,255,255,0.2); \
              text-decoration: none;"
 
           $("body").attr("style", "background: linear-gradient(to bottom, #1A5ECB 90%, #fff);");
@@ -287,7 +286,6 @@ $(document).ready(function(){
             -moz-background-clip: text; \
             background-clip: text; \
             color: transparent; \
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.2); \
             text-decoration: none;"
 
 
