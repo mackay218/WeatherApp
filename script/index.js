@@ -258,7 +258,7 @@ $(document).ready(function(){
 
         });
 
-        fahrenheit = 60;
+      
 
         var signatureStyle = "";
 
