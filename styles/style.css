@@ -226,7 +226,9 @@ h1{
   flex-direction: row;
 }
 
-.portfolioLink p{
+
+
+.sig{
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 20px;
 }
