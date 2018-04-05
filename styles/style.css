@@ -181,6 +181,13 @@ h1{
     font-size: 15px;
     transition: 0.5s;
   }
+
+  .signature{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .signature{
