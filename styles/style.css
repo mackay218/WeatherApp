@@ -40,7 +40,7 @@ h1{
 }
 
 .city{
-  font-family: "IBM Plex Sans";
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 300;
   font-size: 30px;
 }
@@ -51,21 +51,25 @@ h1{
 }
 
 .description{
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 25px;
   font-weight: 100;
 }
 
 .temp{
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 40px;
   font-weight: 500;
 }
 
 .tempBtn{
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 20px;
   font-weight: 300;
 }
 
 .other{
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 25px;
   font-weight: 200;
   display: flex;
