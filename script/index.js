@@ -236,6 +236,7 @@ $(document).ready(function(){
 
           //function for temp unit change
           $(".tempBtn").click(function(){
+              clickCount += 1;
 
             if(clickCount == 1){
               temp = fahrenheit + " &#8457";
@@ -250,7 +251,7 @@ $(document).ready(function(){
               $(".tempBtn").html("switch to &#8451");
             }
             $(".temp").html(temp);
-            clickCount += 1;
+
 
           });
 
