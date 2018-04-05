@@ -34,7 +34,9 @@ h1{
 .weatherContainer{
   grid-row: 2/3;
   grid-column: 1/2;
-  height: 70vh;
+  position: absolute;
+  top: 20vh;
+  height: 60vh;
   width: 90vw;
   margin-left: 5vw;
   border: 2px solid #fff;
@@ -55,7 +57,7 @@ h1{
 @media only screen and (orientation: landscape) and (max-width: 900px){
   .weatherContainer{
     position: absolute;
-    top: 20vh;
+    bottom: 15vh;
     height: 60vh;
     display: grid;
     grid: auto auto/ auto auto auto;
