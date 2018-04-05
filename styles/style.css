@@ -8,6 +8,7 @@ body{
   padding: 0;
   overflow: hidden;
   background: linear-gradient(to bottom, #1A5ECB 90%, #fff);
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -136,7 +137,7 @@ h1{
 .icon{
   height: 100px;
   width: 100px;
-  padding-left: 10px;
+  margin-left: 30px;
   opacity: 0;
 }
 
