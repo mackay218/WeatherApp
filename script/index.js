@@ -271,6 +271,7 @@ $(document).ready(function(){
              -webkit-background-clip: text; \
              -moz-background-clip: text; \
              background-clip: text; \
+            text-shadow: 0 0 1px rgba(255,255,255,0.2); \
              color: transparent; \
              text-decoration: none;"
 
@@ -285,6 +286,7 @@ $(document).ready(function(){
             -webkit-background-clip: text; \
             -moz-background-clip: text; \
             background-clip: text; \
+            text-shadow: 0 0 1px rgba(0,0,0,0.2); \
             color: transparent; \
             text-decoration: none;"
 

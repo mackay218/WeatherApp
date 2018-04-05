@@ -220,6 +220,7 @@ h1{
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 0 1px rgba(255,255,255,0.2);
   text-decoration: none;
   display: flex;
   flex-direction: row;
