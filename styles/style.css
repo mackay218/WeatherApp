@@ -26,6 +26,9 @@ h1{
   height: auto;
   width: auto;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .weatherContainer{
@@ -44,13 +47,71 @@ h1{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
+  transition: 0.5s;
 }
+
+@media only screen and (orientation: landscape) and (max-width: 900px){
+  .weatherContainer{
+    position: absolute;
+    top: 20vh;
+    height: 60vh;
+    display: grid;
+    grid: auto auto/ auto auto auto;
+    transition: 0.5s;
+  }
+
+  .city{
+    grid-row: 1/2;
+    grid-column: 1/4;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    transition: 0.5s;
+  }
+
+  .temperature{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    transition: 0.5s;
+  }
+
+  .weather{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    transition: 0.5s;
+  }
+
+
+  .other{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+    transition: 0.5s;
+  }
+}
+
+
+
+
 
 .city{
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 300;
   font-size: 30px;
+  transition: 0.5s;
+}
+
+.weather{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .icon{
@@ -60,21 +121,27 @@ h1{
 }
 
 .description{
+  width: 100%;
+  text-align: center;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 25px;
   font-weight: 100;
 }
 
 .temp{
+  width: 100%;
+  text-align: center;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 40px;
   font-weight: 500;
 }
 
 .tempBtn{
+  width: 100%;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 20px;
   font-weight: 300;
+  text-align: center;
   background: transparent;
   border: none;
   outline: none;
@@ -89,47 +156,47 @@ h1{
 .other{
   width: 100%;
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 25px;
-  font-weight: 200;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  transition: 0.5s;
 }
 
-.humidity{
-  margin-left: 5px;
+@media only screen and (min-height: 500px){
+  .other{
+    width: auto;
+    font-size: 25px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: 0.5s;
+  }
+
+  .humidity{
+    margin-left: 5px;
+    transition: 0.5s;
+  }
+}
+
+@media only screen and (orientation: portrait){
+  .other{
+    font-size: 15px;
+    transition: 0.5s;
+  }
 }
 
 .signature{
   grid-row: 3/4;
   grid-column: 1/2;
+  position: absolute;
+  bottom: 2px;
   height: auto;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 .portfolioLink{
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-}
-
-.portfolioLink p{
-    background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
-    background-size: 300%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0px 1px 2px rgba(255,255,255,0.2);
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 20px;
-}
-
-.heroLogo{
   background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);
   background-size: 300%;
   -webkit-background-clip: text;
@@ -137,6 +204,17 @@ h1{
   background-clip: text;
   color: transparent;
   text-shadow: 0px 1px 2px rgba(255,255,255,0.2);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.portfolioLink p{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+}
+
+.heroLogo{
   font-size: 60px;
 }
 
@@ -152,6 +230,7 @@ h1{
   -moz-animation: backgroundShift 20s ease infinite alternate;
   animation: backgroundShift 20s ease infinite alternate;
 }
+
 
 
 @-webkit-keyframes backgroundShift {

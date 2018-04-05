@@ -265,29 +265,34 @@ $(document).ready(function(){
         //change background based on temp
         if(fahrenheit <= 50){
 
-          signatureStyle = "-webkit-background-clip: text; \
-            -moz-background-clip: text; \
-            background-clip: text; \
-            color: transparent; \
-            text-shadow: 0px 1px 2px rgba(255,255,255,0.2); \
-            background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff);"
+          signatureStyle =
+            "background: linear-gradient(to bottom right, #fff, #0A48A9, #fff, #1A5ECB, #fff); \
+             background-size: 300%; \
+             -webkit-background-clip: text; \
+             -moz-background-clip: text; \
+             background-clip: text; \
+             color: transparent; \
+             text-shadow: 0px 1px 2px rgba(255,255,255,0.2); \
+             text-decoration: none;"
 
           $("body").attr("style", "background: linear-gradient(to bottom, #1A5ECB 90%, #fff);");
-          $("#sig").attr("style", signatureStyle);
-          $("#sigLogo").attr("style", signatureStyle);
+          $(".portfolioLink").attr("style", signatureStyle);
         }
         else if(fahrenheit > 50){
 
-          signatureStyle = "-webkit-background-clip: text; \
+          signatureStyle =
+            "background: linear-gradient(to bottom right, #FFE168, #FF6E0B, #FFE168, #C44F00, #FFE168); \
+            background-size: 300%; \
+            -webkit-background-clip: text; \
             -moz-background-clip: text; \
             background-clip: text; \
             color: transparent; \
             text-shadow: 0px 1px 2px rgba(0,0,0,0.2); \
-            background: linear-gradient(to bottom right, #FFE168, #FF6E0B, #FFE168, #C44F00, #FFE168);"
+            text-decoration: none;"
+
 
           $("body").attr("style", "background: linear-gradient(to bottom, #FF6E0B, #FFE168);");
-          $("#sig").attr("style", signatureStyle);
-          $("#sigLogo").attr("style", signatureStyle);
+          $(".portfolioLink").attr("style", signatureStyle);
         }
 
       }
