@@ -23,8 +23,7 @@ h1{
 .container{
   height: auto;
   width: auto;
-  border: 2px solid black;
-  font-size: 30px;
+  color: #fff;
 }
 
 .weatherContainer{
@@ -40,13 +39,30 @@ h1{
   align-items: center;
 }
 
-.other{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.city{
+  font-size: 30px;
 }
 
 .icon{
-  height: 5vw;
-  width: 5vw;
+  height: 10vw;
+  width: 10vw;
+}
+
+.description{
+  font-size: 25px;
+}
+
+.temp{
+  font-size: 40px;
+}
+
+.tempBtn{
+  font-size: 20px;
+}
+
+.other{
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
