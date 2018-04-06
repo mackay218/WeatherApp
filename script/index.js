@@ -24,9 +24,12 @@ $(document).ready(function(){
 
         var cityString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + localeLat + "," + localeLon + "&key=AIzaSyB0Hk07Fs5gTfUHmUqDOUvhUIXOKQwAtPY"
 
+
+
         $.getJSON(cityString, function(response){
-          city = response.results[2].address_components[1].long_name + ", " + response.results[2].address_components[2].short_name;
-          console.log(city);
+          city = response.results[0].address_components[2].long_name + ", " + response.results[0].address_components[4].short_name;
+
+
 
           $(".city").html(city);
         });
