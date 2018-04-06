@@ -34,7 +34,7 @@ $(document).ready(function(){
 
           var location = city + state;
 
-          if(state.length == 2){
+          if(state.length <= 4){
             $(".city").html(location);
           }
           else{

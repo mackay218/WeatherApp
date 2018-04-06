@@ -135,7 +135,7 @@ h1{
 .icon{
   height: 100px;
   width: 100px;
-  margin-left: 10px;
+
   opacity: 0;
 }
 
@@ -143,7 +143,7 @@ h1{
   .icon{
     position: relative;
     top: 20px;
-    margin-left: 10px;
+
   }
   .credit{
     position: relative;
