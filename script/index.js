@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 
         $.getJSON(cityString, function(response){
-          city = response.results[0].address_components[2].long_name + ", " + response.results[0].address_components[4].short_name;
+          city = response.results[0].address_components[2].long_name + ", " + response.results[2].address_components[4].short_name;
 
 
 
