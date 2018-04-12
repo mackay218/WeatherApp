@@ -1,0 +1,6 @@
+To use the local sunrise and sunset times for icons indicating day or night the 
+user needs to put in their own google API key in the the index.js file found in the script folder.
+
+The placement for the key is indicated at line 114 of index.js.
+
+A key can be generated at https://developers.google.com/maps/documentation/timezone/start#get-a-key
