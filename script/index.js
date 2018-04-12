@@ -41,7 +41,7 @@ $(document).ready(function(){
             $(".city").html(city);
           }
 
-          console.log(location);
+          //console.log(location);
 
 
         });
@@ -100,17 +100,37 @@ $(document).ready(function(){
               sunset = Number(sunset);
             }
 
-            //correction because API response is off by 5 hours
-            sunrise = sunrise - 5;
+            //timezone correction for offset from UTC
 
-            if(sunset == 0){
-              sunset = 19;
-            }
-            else{
-              sunset = sunset - 5;
-            }
 
-            console.log(sunrise, sunset);
+            var timeStamp = Math.floor((new Date()).getTime() / 1000);
+            console.log(timeStamp);
+
+            var offSet = "";
+
+            //requires google API key found here https://developers.google.com/maps/documentation/timezone/start#get-a-key
+            $.getJSON("https://maps.googleapis.com/maps/api/timezone/json?location=" +
+                      localeLat + "," + localeLon + "&timestamp=" + timeStamp + "&key=" +
+                      "your google API Key", function(timeOffset){
+
+              var dayLightSavings = Number(timeOffset.dstOffset);
+              var timeZone = Number(timeOffset.rawOffset);
+
+              offSet = (dayLightSavings + timeZone) / 3600;
+
+              sunrise = sunrise + offSet;
+
+              if(sunset == 0 && offSet < 0){
+                sunset = 24 + offSet;
+              }
+              else{
+                sunset = sunset + offSet;
+              }
+
+              console.log(offSet);
+
+            });
+
         });
 
         $.getJSON(weatherString, function(result){
@@ -121,7 +141,7 @@ $(document).ready(function(){
           wind = "wind: " + result.wind.speed + "mph";
           humidity = "humidity: " + result.main.humidity + "%";
 
-          console.log(description, celsius, wind, humidity, icon);
+          //console.log(description, celsius, wind, humidity, icon);
 
           temp = fahrenheit + " &#8457";
 
